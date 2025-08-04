@@ -1,0 +1,230 @@
+import { User, Transaction, Budget, SavingsGoal, Achievement, AuraMessage, FinancialTip } from '../types';
+
+export const mockUser: User = {
+  id: '1',
+  name: 'Kwame Asante',
+  email: 'kwame.asante@email.com',
+  phone: '+233 24 123 4567',
+  currency: 'GHS',
+  language: 'en',
+  monthlyIncome: 3500,
+  joinedDate: new Date('2024-01-15'),
+  gamificationPoints: 1250,
+  level: 3,
+};
+
+export const mockTransactions: Transaction[] = [
+  {
+    id: '1',
+    amount: -45.50,
+    description: 'Lunch at Papaye',
+    category: 'food_dining',
+    type: 'expense',
+    date: new Date('2024-12-20'),
+    paymentMethod: 'mtn_momo',
+  },
+  {
+    id: '2',
+    amount: -120.00,
+    description: 'Trotro fare - Week',
+    category: 'transportation',
+    type: 'expense',
+    date: new Date('2024-12-19'),
+    paymentMethod: 'cash',
+  },
+  {
+    id: '3',
+    amount: 3500.00,
+    description: 'Monthly Salary',
+    category: 'other',
+    type: 'income',
+    date: new Date('2024-12-18'),
+    paymentMethod: 'bank',
+  },
+  {
+    id: '4',
+    amount: -200.00,
+    description: 'ECG Bill',
+    category: 'utilities',
+    type: 'expense',
+    date: new Date('2024-12-17'),
+    paymentMethod: 'mtn_momo',
+  },
+  {
+    id: '5',
+    amount: -80.00,
+    description: 'Data Bundle',
+    category: 'utilities',
+    type: 'expense',
+    date: new Date('2024-12-16'),
+    paymentMethod: 'vodafone_cash',
+  },
+];
+
+export const mockBudgets: Budget[] = [
+  {
+    id: '1',
+    category: 'food_dining',
+    allocated: 800,
+    spent: 456.50,
+    period: 'monthly',
+    startDate: new Date('2024-12-01'),
+    endDate: new Date('2024-12-31'),
+  },
+  {
+    id: '2',
+    category: 'transportation',
+    allocated: 400,
+    spent: 320.00,
+    period: 'monthly',
+    startDate: new Date('2024-12-01'),
+    endDate: new Date('2024-12-31'),
+  },
+  {
+    id: '3',
+    category: 'utilities',
+    allocated: 500,
+    spent: 280.00,
+    period: 'monthly',
+    startDate: new Date('2024-12-01'),
+    endDate: new Date('2024-12-31'),
+  },
+  {
+    id: '4',
+    category: 'entertainment',
+    allocated: 300,
+    spent: 150.00,
+    period: 'monthly',
+    startDate: new Date('2024-12-01'),
+    endDate: new Date('2024-12-31'),
+  },
+];
+
+export const mockSavingsGoals: SavingsGoal[] = [
+  {
+    id: '1',
+    title: 'Emergency Fund',
+    description: '6 months of expenses for financial security',
+    targetAmount: 15000,
+    currentAmount: 8500,
+    targetDate: new Date('2025-06-30'),
+    category: 'emergency',
+    isActive: true,
+    milestones: [
+      { id: '1', percentage: 25, amount: 3750, achieved: true, achievedDate: new Date('2024-10-15') },
+      { id: '2', percentage: 50, amount: 7500, achieved: true, achievedDate: new Date('2024-12-01') },
+      { id: '3', percentage: 75, amount: 11250, achieved: false },
+      { id: '4', percentage: 100, amount: 15000, achieved: false },
+    ],
+  },
+  {
+    id: '2',
+    title: 'Business Capital',
+    description: 'Start my own clothing business',
+    targetAmount: 25000,
+    currentAmount: 12000,
+    targetDate: new Date('2025-12-31'),
+    category: 'business',
+    isActive: true,
+    milestones: [
+      { id: '1', percentage: 25, amount: 6250, achieved: true },
+      { id: '2', percentage: 50, amount: 12500, achieved: false },
+      { id: '3', percentage: 75, amount: 18750, achieved: false },
+      { id: '4', percentage: 100, amount: 25000, achieved: false },
+    ],
+  },
+];
+
+export const mockAchievements: Achievement[] = [
+  {
+    id: '1',
+    title: 'First Steps',
+    description: 'Created your first savings goal',
+    icon: '🎯',
+    points: 100,
+    unlockedDate: new Date('2024-01-20'),
+    category: 'milestone',
+  },
+  {
+    id: '2',
+    title: 'Budget Master',
+    description: 'Stayed within budget for 3 consecutive months',
+    icon: '💰',
+    points: 250,
+    unlockedDate: new Date('2024-11-15'),
+    category: 'budgeting',
+  },
+  {
+    id: '3',
+    title: 'Savings Streak',
+    description: 'Saved money for 30 consecutive days',
+    icon: '🔥',
+    points: 200,
+    unlockedDate: new Date('2024-12-10'),
+    category: 'saving',
+  },
+  {
+    id: '4',
+    title: 'Knowledge Seeker',
+    description: 'Completed 10 financial education modules',
+    icon: '📚',
+    points: 150,
+    category: 'education',
+  },
+];
+
+export const mockAuraMessages: AuraMessage[] = [
+  {
+    id: '1',
+    content: 'Great job staying within your food budget this week! You\'re building excellent financial habits. 🌟',
+    type: 'congratulation',
+    timestamp: new Date('2024-12-20T10:30:00'),
+    isRead: false,
+  },
+  {
+    id: '2',
+    content: 'I noticed you\'re close to reaching 60% of your Emergency Fund goal. Consider setting up an automatic transfer to boost your progress!',
+    type: 'advice',
+    timestamp: new Date('2024-12-19T14:15:00'),
+    isRead: true,
+    actionRequired: true,
+    relatedGoal: '1',
+  },
+  {
+    id: '3',
+    content: 'Your transportation expenses are 20% higher than usual this month. Would you like some tips on reducing commute costs?',
+    type: 'warning',
+    timestamp: new Date('2024-12-18T09:45:00'),
+    isRead: true,
+  },
+];
+
+export const mockFinancialTips: FinancialTip[] = [
+  {
+    id: '1',
+    title: 'The 50/30/20 Rule for Ghanaians',
+    content: 'Allocate 50% of your income to needs (rent, food, utilities), 30% to wants (entertainment, dining out), and 20% to savings and debt repayment. Adjust based on your local cost of living.',
+    category: 'budgeting',
+    language: 'en',
+    difficulty: 'beginner',
+    readTime: 3,
+  },
+  {
+    id: '2',
+    title: 'Building Your Emergency Fund',
+    content: 'Start with saving GHS 500-1000 for small emergencies, then work towards 3-6 months of expenses. Use mobile money auto-save features to make it automatic.',
+    category: 'saving',
+    language: 'en',
+    difficulty: 'beginner',
+    readTime: 4,
+  },
+  {
+    id: '3',
+    title: 'Understanding SSNIT Contributions',
+    content: 'Your SSNIT contributions (13.5% of salary) provide retirement benefits. Consider additional private pension schemes to boost your retirement savings.',
+    category: 'investing',
+    language: 'en',
+    difficulty: 'intermediate',
+    readTime: 5,
+  },
+];

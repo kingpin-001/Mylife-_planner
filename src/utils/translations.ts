@@ -1,0 +1,60 @@
+export const translations = {
+  en: {
+    welcome: 'Welcome to MyLife Planner',
+    dashboard: 'Dashboard',
+    budget: 'Budget',
+    savings: 'Savings',
+    goals: 'Goals',
+    aura: 'Aura Coach',
+    profile: 'Profile',
+    totalBalance: 'Total Balance',
+    monthlyIncome: 'Monthly Income',
+    monthlyExpenses: 'Monthly Expenses',
+    savingsRate: 'Savings Rate',
+    budgetOverview: 'Budget Overview',
+    recentTransactions: 'Recent Transactions',
+    savingsGoals: 'Savings Goals',
+    achievements: 'Achievements',
+    financialTips: 'Financial Tips',
+    addTransaction: 'Add Transaction',
+    createGoal: 'Create Goal',
+    viewAll: 'View All',
+    congratulations: 'Congratulations!',
+    goodJob: 'Good job!',
+    keepItUp: 'Keep it up!',
+    almostThere: 'Almost there!',
+    wellDone: 'Well done!',
+  },
+  tw: {
+    welcome: 'Akwaaba MyLife Planner mu',
+    dashboard: 'Dashboard',
+    budget: 'Budget',
+    savings: 'Sikakorabea',
+    goals: 'Botae',
+    aura: 'Aura Ɔkyerɛkyerɛfo',
+    profile: 'Profile',
+    totalBalance: 'Sika Dodow',
+    monthlyIncome: 'Ɔsram Biara Sika a Wunya',
+    monthlyExpenses: 'Ɔsram Biara Ka',
+    savingsRate: 'Sikakorabea Dodow',
+    budgetOverview: 'Budget Mfiri',
+    recentTransactions: 'Sika Dwuma a Aba',
+    savingsGoals: 'Sikakorabea Botae',
+    achievements: 'Nkonimdi',
+    financialTips: 'Sika Ho Nyansapo',
+    addTransaction: 'Ka Sika Dwuma Ho',
+    createGoal: 'Yɛ Botae',
+    viewAll: 'Hwɛ Nyinaa',
+    congratulations: 'Ayeeko!',
+    goodJob: 'Adwuma pa!',
+    keepItUp: 'Kɔ so!',
+    almostThere: 'Worebɛdu!',
+    wellDone: 'Wayɛ yiye!',
+  }
+};
+
+export const getTranslation = (key: string, language: string = 'en'): string => {
+  return translations[language as keyof typeof translations]?.[key as keyof typeof translations.en] || 
+         translations.en[key as keyof typeof translations.en] || 
+         key;
+};
