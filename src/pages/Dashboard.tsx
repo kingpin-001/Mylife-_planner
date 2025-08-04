@@ -3,7 +3,7 @@ import { StatsCard } from '../components/Dashboard/StatsCard';
 import { BudgetOverview } from '../components/Dashboard/BudgetOverview';
 import { RecentTransactions } from '../components/Dashboard/RecentTransactions';
 import { GoalCard } from '../components/Goals/GoalCard';
-import { User, Transaction, Budget, SavingsGoal } from '../types';
+import type { User, Transaction, Budget, SavingsGoal } from '../types';
 import { Wallet, TrendingUp, TrendingDown, PiggyBank, Plus } from 'lucide-react';
 
 interface DashboardProps {

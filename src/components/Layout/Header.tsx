@@ -1,6 +1,6 @@
 import React from 'react';
 import { Bell, Settings } from 'lucide-react';
-import { User } from '../../types';
+import type { User } from '../../types';
 import { formatCurrency } from '../../utils/currency';
 
 interface HeaderProps {

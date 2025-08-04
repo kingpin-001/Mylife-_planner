@@ -1,4 +1,4 @@
-import { User, Transaction, Budget, SavingsGoal, Achievement, AuraMessage, FinancialTip } from '../types';
+import type { User, Transaction, Budget, SavingsGoal, Achievement, AuraMessage, FinancialTip } from '../types';
 
 export const mockUser: User = {
   id: '1',

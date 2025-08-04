@@ -1,6 +1,6 @@
 import React from 'react';
 import { AchievementBadge } from '../components/Profile/AchievementBadge';
-import { User, Achievement } from '../types';
+import type { User, Achievement } from '../types';
 import { formatCurrency } from '../utils/currency';
 import { 
   User as UserIcon, 
